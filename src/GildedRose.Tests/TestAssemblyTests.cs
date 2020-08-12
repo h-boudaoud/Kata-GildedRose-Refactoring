@@ -40,6 +40,15 @@ namespace GildedRose.Tests
                 testItems.Add(new Item() { Name = item.Name, Quality = item.Quality, SellIn = item.SellIn });
             }
 
+            
+            for (int i = 0; i < 100; i++)
+            {
+                app.UpdateQuality();
+                Program.UpdateItems(testItems);
+            }
+			
+
+
             app.Items.Should().BeEquivalentTo(testItems);
 
         }
